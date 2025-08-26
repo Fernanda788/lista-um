@@ -11,12 +11,12 @@
     <form method="POST" action="">
         <label for="numero">Digite um número:</label>
         <input type="number" id="numero" name="numero" required>
-        <button type="submit" name="verificar_par_impar">Verificar</button>
+        <button type="submit" name="verificar_divisor">Verificar</button>
     </form>
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if (isset($_POST['verificar_par_impar'])) {
+    if (isset($_POST['verificar_divisor'])) {
         $NUMERO = $_POST['numero'];
         $divisores = [];
         for ($i = 1; $i <= $NUMERO; $i++) {
@@ -26,7 +26,7 @@
             }
         }
         $soma1 = array_sum($divisores);
-        echo "$soma1";
+        echo "E a soma dos divisores é: $soma1";
     }
 }
 
