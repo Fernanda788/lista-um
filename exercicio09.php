@@ -24,13 +24,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $NUMERO1 = (int)$_POST['numero1'];
         $NUMERO2 = (int)$_POST['numero2'];
 
+        if ($NUMERO1 > $NUMERO2) {
+            [$NUMERO1, $NUMERO2] = [$NUMERO2, $NUMERO1]; // Isso faz dar certo mesmo a pessoa colocando 10 primeiro e 1 depois
+        }
+
         $soma = 0;
 
         for ($i = $NUMERO1 + 1; $i < $NUMERO2; $i++) {
             $soma += $i;
         }
 
-        echo $soma;
+        echo "A soma é: $soma";
     }
 }
 ?>
